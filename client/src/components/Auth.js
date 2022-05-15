@@ -5,6 +5,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 import axios from 'axios';
 import './Auth.css';
 import { useState, useEffect } from 'react';
+//import { Button } from '@mui/material';
 
 const Auth = () => {
   //Sign Up State
@@ -55,7 +56,7 @@ const Auth = () => {
         .then(res=>document.getElementById("invCred").innerHTML=JSON.stringify(res.data).substring(12,35))
       }
       else{
-        document.getElementById("invCred").innerHTML="Password did not match"
+        document.getElementById("invCred").innerHTML="Passwords did not match"
       }
     }
     else{
@@ -114,7 +115,9 @@ const Auth = () => {
             onChange={handleInputs}
           />
 
-					<button type='button' onClick={signUp}>Sign up</button>
+					<button type='button' onClick={signUp}>
+              Sign Up
+          </button>
           <p id="invCred" style={{textAlign:"center", fontWeight:"bold", color:"#fff"}}></p>
 				</form>
 			</div>

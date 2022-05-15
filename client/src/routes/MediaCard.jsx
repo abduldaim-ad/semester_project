@@ -94,6 +94,7 @@ export default function MediaCard() {
       </CardContent>
       <Button
         id="demo-customized-button"
+        style={{color:"white", backgroundColor:"#573b8a", fontWeight:"bold"}}
         aria-controls={open ? 'demo-customized-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
@@ -126,8 +127,8 @@ export default function MediaCard() {
         </MenuItem>
       </StyledMenu>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button variant="contained">Add To Cart</Button>
+        <Button size="small" style={{color:"#573b8a", fontWeight:"bold"}}>Share</Button>
+        <Button variant="contained" style={{color:"white", backgroundColor:"#573b8a", fontWeight:"bold"}}>Add To Cart</Button>
       </CardActions>
     </Card>
     )
