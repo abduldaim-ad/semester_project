@@ -49,9 +49,14 @@ const Auth = () => {
 
   const signUp = ()=>{
     const {inputName,inputEmail,inputPassword,inputCPassword} = userSignUp
-    if (inputName && inputEmail && inputPassword && (inputPassword === inputCPassword)){
-     axios.post("http://localhost:9002/signup",userSignUp )
-     .then(res=>console.log(res))
+    if (inputName && inputEmail && inputPassword){
+      if(inputPassword === inputCPassword){
+        axios.post("http://localhost:9002/signup",userSignUp )
+        .then(res=>document.getElementById("invCred").innerHTML=JSON.stringify(res.data).substring(12,35))
+      }
+      else{
+        document.getElementById("invCred").innerHTML="Password did not match"
+      }
     }
     else{
         document.getElementById("invCred").innerHTML="Invalid Credentials!"
