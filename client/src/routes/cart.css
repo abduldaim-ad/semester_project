@@ -297,6 +297,10 @@ header {
   background-color: rgb(209, 61, 61);
 }
 
+.card-total .check-out:hover{
+    background-color: #6d44b8;
+}
+
 .card-total .clear-cart:hover {
   background-color: rgb(197, 5, 5);
 }

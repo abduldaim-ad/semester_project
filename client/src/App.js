@@ -18,12 +18,17 @@ export default function App() {
         </li>
       <li className="nav-item active">
         <a className="nav-link" href="#">
-        <Link to="/invoices" style={{color:"white", textDecoration:"none"}} className="linksCSS">Cart</Link>
+        <Link to="/cart" style={{color:"white", textDecoration:"none"}} className="linksCSS">Cart</Link>
         </a>
       </li>
       <li className="nav-item">
         <a className="nav-link" href="#">
         <Link to="/card" style={{color:"white", textDecoration:"none"}} className="linksCSS">Cards</Link>
+        </a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link" href="#">
+        <Link to="/checkout" style={{color:"white", textDecoration:"none"}} className="linksCSS">Checkout</Link>
         </a>
       </li>
       <li className="nav-item">

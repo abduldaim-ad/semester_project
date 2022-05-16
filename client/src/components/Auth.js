@@ -115,7 +115,7 @@ const Auth = () => {
             onChange={handleInputs}
           />
 
-					<button type='button' onClick={signUp}>
+					<button type='button' style={{backgroundColor:"#09062b"}} onClick={signUp}>
               Sign Up
           </button>
           <p id="invCred" style={{textAlign:"center", fontWeight:"bold", color:"#fff"}}></p>
@@ -125,10 +125,10 @@ const Auth = () => {
       {/* Sign In UI */}
 			<div class="signin">
 				<form>
-					<label for="chk" aria-hidden="true">Sign In</label>
+					<label for="chk" aria-hidden="true" style={{color:"#09062b"}}>Sign In</label>
             <input type="email" id="form2Example1" name="email" value={user.email} placeholder="Email" onChange={handleChange}/>
             <input type="password" id="form2Example2" name="password" value={user.password} placeholder="Password" onChange={handleChange}/>
-          <button type="button" onClick={signIn}>Sign In</button>
+          <button type="button" style={{backgroundColor:"#09062b"}} onClick={signIn}>Sign In</button>
 				</form>
 			</div>
 	</div>

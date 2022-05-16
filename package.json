@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "react-custom-scrollbars-2": "^4.4.0"
+    "react-custom-scrollbars-2": "^4.4.0",
+    "stripe": "^9.1.0"
   }
 }

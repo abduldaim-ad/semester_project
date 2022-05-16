@@ -9,7 +9,11 @@ export const reducer = (state, action) => {
     }
   
     if (action.type === "CLEAR_CART") {
-      return { ...state, item: [] };
+    //   return { ...state, item: [] };
+    const updatedCart = state.item.map((curElem) => {
+          return { ...curElem, quantity: curElem.quantity = 0 };
+    });
+    return { ...state, item: updatedCart };
     }
   
     if (action.type === "INCREMENT") {
@@ -26,8 +30,10 @@ export const reducer = (state, action) => {
     if (action.type === "DECREMENT") {
       const updatedCart = state.item
         .map((curElem) => {
-          if (curElem.id === action.payload) {
-            return { ...curElem, quantity: curElem.quantity - 1 };
+          if(curElem.quantity>0){
+            if (curElem.id === action.payload) {
+              return { ...curElem, quantity: curElem.quantity - 1 };
+            }
           }
           return curElem;
         })

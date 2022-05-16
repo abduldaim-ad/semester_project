@@ -9,6 +9,7 @@ import MediaCard from "./routes/MediaCard";
 import Invoices from "./routes/invoices";
 import Auth from './components/Auth';
 import Cart from "./routes/Cart";
+import Payment from "./routes/Payment";
 
 const rootElement = document.getElementById("root");
 render(
@@ -16,7 +17,8 @@ render(
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="card" element={<MediaCard />} />
-        <Route path="invoices" element={<Cart />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="checkout" element={<Payment />} />
         {/* <Route path="signup" element={<SignUp />} /> */}
         <Route path="auth" element={<Auth />} />
       </Route>
