@@ -21,7 +21,15 @@ const userSchema = new mongoose.Schema({
     inputPassword: String,
 })
 
+const checkoutSchema = new mongoose.Schema({
+    curName: String,
+    curEmail: String,
+    totalAmount: String,
+    totalItem: String
+})
+
 const User = new mongoose.model("User", userSchema)
+const Checkout = new mongoose.model("Checkout", checkoutSchema)
 
 //Routes
 app.post("/signin",(req,res)=>{
@@ -76,6 +84,40 @@ app.post("/signup",(req,res)=>{
                 }
             })
         }
+    })
+})
+
+app.post("/postcheckout",(req,res)=>{
+    //res.send("My API Sign Up")
+    const {curName, curEmail, totalAmount, totalItem}  = req.body
+    console.log("dlkjfd" + totalAmount)
+    // console.log(req.body)
+    // console.log(inputName)
+    // console.log(inputEmail)
+    // console.log(inputPassword)
+            const checkout = new Checkout({
+                curName,
+                curEmail,
+                totalAmount,
+                totalItem
+            })
+            console.log(checkout)
+            checkout.save(err=>{
+                if(err){
+                    res.send(err)
+                }
+                else{
+                    res.send({message: "Checkout Successful!"})
+                }
+})
+})
+
+app.get("/readcheckout", async(req, res)=>{
+    Checkout.find({},(err, result)=>{
+        if (err){
+            res.send(err)
+        }
+        res.send(result);
     })
 })
 

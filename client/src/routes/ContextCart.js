@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import Items from "./Items";
+import axios from 'axios';
 import Button from '@mui/material/Button';
 import { CartContext } from "./Cart";
 import './ContextCart.css'
@@ -8,6 +9,12 @@ import './ContextCart.css'
 const ContextCart = () => {
   const { item, clearCart, totalItem, totalAmount } = useContext(CartContext);
   const [expandState, setExpandState] = useState("No Expanded State");
+  const postCheckout = {
+    curName: "Abdul Daim",
+    curEmail: "ad-email@gmail.com",
+    totalAmount: totalAmount,
+    totalItem: totalItem
+  }
   const expand = (id) => {
               item.map((curItem) => {
                 if(curItem.id===id){
@@ -19,6 +26,20 @@ const ContextCart = () => {
 
   const closeNav = () => {
   document.getElementById("expandData").style.height = "0%";
+  }
+
+  const postCheckoutInfo = () =>{
+    //  console.log(totalAmount)
+    // console.log(item)
+    // console.log(totalItem)
+    // console.log(clearCart)    
+      // setPostCheckout({
+      //   totalAmount:totalAmount
+      // });
+
+    console.log(postCheckout)
+    axios.post("http://localhost:9002/postcheckout",postCheckout )
+    .then(res=>console.log(res))
   }
 
   if (item.length === 0) {
@@ -89,10 +110,10 @@ const ContextCart = () => {
         </div>
 
         <div className="card-total" style={{display:"flex"}}>
-          <h3>
-            Cart Total : <span>Rs.{totalAmount}/-</span>
+          <h3 style={{fontSize:"20px"}}>
+            Cart Total : Rs.{totalAmount}/-
           </h3>
-          <button className="check-out" style={{width:"30%", fontSize:"100%", backgroundColor:"#09062b", textTransform:"capitalize"}}>Checkout</button>
+          <button className="check-out" style={{width:"30%", fontSize:"100%", backgroundColor:"#09062b", textTransform:"capitalize"}} onClick={postCheckoutInfo}>Checkout</button>
           <button className="clear-cart" style={{width:"30%", fontSize:"100%", textTransform:"capitalize"}} onClick={clearCart}>
             Clear Cart
           </button>

@@ -11,6 +11,7 @@ import Invoices from "./routes/invoices";
 import Auth from './components/Auth';
 import Cart from "./routes/Cart";
 import Payment from "./routes/Payment";
+import CheckoutData from "./routes/CheckoutData";
 
 const rootElement = document.getElementById("root");
 render(
@@ -21,6 +22,7 @@ render(
         <Route path="cart" element={<Cart />} />
         <Route path="checkout" element={<Payment />} />
         {/* <Route path="signup" element={<SignUp />} /> */}
+        <Route path="checkoutdata" element={<CheckoutData />} />
         <Route path="auth" element={<Auth />} />
       </Route>
     </Routes>

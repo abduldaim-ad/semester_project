@@ -41,6 +41,14 @@ export default function App() {
         <Link to="/checkout" style={{color:"white", textDecoration:"none"}} className="linksCSS">Checkout</Link>
         </a>
       </li>
+      {user.inputName === "admin"?
+      <li className="nav-item">
+        <a className="nav-link" href="#">
+        <Link to="/checkoutdata" style={{color:"white", textDecoration:"none"}} className="linksCSS">Checkout Data</Link>
+        </a>
+      </li>:
+        null
+      }
       <li className="nav-item">
         <a className="nav-link" href="#">
         <Link to="/" style={{color:"white", textDecoration:"none"}} onClick={e=>setLoginUser({})} className="linksCSS">Sign Out</Link>
@@ -50,7 +58,7 @@ export default function App() {
       :
       <li className="nav-item">
         <a className="nav-link" href="#">
-        <Link to="/auth" style={{color:"white", textDecoration:"none"}} className="linksCSS">Sign In/Sign Up</Link>
+        <Link to="/" style={{color:"white", textDecoration:"none"}} className="linksCSS">Sign In/Sign Up</Link>
         </a>
       </li>
     }
@@ -80,7 +88,7 @@ export default function App() {
         </li>
       <li className="nav-item active">
         <a className="nav-link" href="#">
-          <Link to="/auth" style={{color:"white", textDecoration:"none"}} className="linksCSS">Sign In/Sign Up</Link>
+          <Link to="/" style={{color:"white", textDecoration:"none"}} className="linksCSS">Sign In/Sign Up</Link>
         </a>
       </li>
       {/* <li className="nav-item">

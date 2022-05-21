@@ -5,6 +5,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 import axios from 'axios';
 import './Auth.css';
 import { useState, useEffect, useHistory } from 'react';
+import ContextCart from '../routes/ContextCart';
 //import {setLoginUser} from '../App';
 //import { Button } from '@mui/material';
 
