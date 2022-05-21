@@ -4,10 +4,13 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import GoogleIcon from '@mui/icons-material/Google';
 import axios from 'axios';
 import './Auth.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useHistory } from 'react';
+//import {setLoginUser} from '../App';
 //import { Button } from '@mui/material';
 
-const Auth = () => {
+const Auth = ({setLoginUser}) => {
+  // console.log("here")
+  // console.log(setLoginUser)
   //Sign Up State
   const [userSignUp, setUserSignUp] = useState({
     inputName:"", inputEmail:"", inputPassword:"", inputCPassword:""
@@ -79,7 +82,12 @@ const Auth = () => {
   const signIn = () => {
     let apiResponse = "";
     axios.post("http://localhost:9002/signin", user)
-    .then(res => console.log(res))
+    .then(res => {
+      console.log(res.data.user)
+      setLoginUser(res.data.user)
+      //setLoginUser("Okay Now")
+     //history.push("/cart")
+    })
   }
   
   //Return
