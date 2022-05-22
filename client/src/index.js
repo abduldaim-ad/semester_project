@@ -37,10 +37,10 @@ render(
       <Route path="/" element={<>
       <App />
       <img id="imgID" src="https://images-na.ssl-images-amazon.com/images/I/71hIfcIPyxS._SL1500_.jpg" alt="iPhone" style={{
-        width:"50%",
-        height: "100%",
+        width:"45%",
+        height: "83vh",
         display: "block",
-        marginLeft:"0",
+        marginLeft:"5%",
         marginRight:"auto",
       }}
       // onMouseOver={changeImg1}
