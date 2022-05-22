@@ -67,7 +67,7 @@ header {
   width: 4rem;
   height: 4rem;
   right: -1.2rem;
-  top: 0.9rem;
+  top: 0.7rem;
   border-radius: 50%;
   background: #99cbf7;
   color: #fff;
@@ -118,6 +118,7 @@ header {
   margin: auto;
   display: grid;
   place-items: center;
+  box-shadow: 5px 5px 10px 10px rgba(1, 6, 44, 0.3);
 }
 
 .cart-items hr {
@@ -144,6 +145,7 @@ header {
   height: 11rem;
   filter: drop-shadow(0rem 0.4rem 1rem #f1f7ff);
   border-radius: 1rem;
+  cursor: zoom-in;
 }
 
 .items-info .title {

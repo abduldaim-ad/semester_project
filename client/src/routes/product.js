@@ -1,9 +1,18 @@
 export const products = [
     {
-      id: 1,
+      id: 0,
       title: "Samsung S21",
       description: "black in color",
       price: "25000",
+      img: "https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      quantity: 0,
+      detail: "iPhone 11 has nearly every meaningful feature the iPhone 11 Pros have: the most powerful performance in any smartphone, a new ultra wide camera, night mode for better low-light photography, longer battery life than the previous generation, and all of the new features in iOS.",
+    },
+    {
+      id: 1,
+      title: "Samsung S31",
+      description: "color is black",
+      price: "35000",
       img: "https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       quantity: 0,
       detail: "iPhone 11 has nearly every meaningful feature the iPhone 11 Pros have: the most powerful performance in any smartphone, a new ultra wide camera, night mode for better low-light photography, longer battery life than the previous generation, and all of the new features in iOS.",

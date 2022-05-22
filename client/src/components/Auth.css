@@ -15,13 +15,14 @@
     }
   } */
 
+
 .signin-signup{
 	margin: 0;
 	padding: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 87.7vh;
+	min-height: 87.6vh;
 	font-family: 'Jost', sans-serif;
 	background: linear-gradient(to bottom, #ffffff, #acacac, #09062b);
     /* #0f0c29, #302b63, #24243e */

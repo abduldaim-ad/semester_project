@@ -9,6 +9,13 @@
     background-color: rgba(9,6,43, 0.9);
     overflow-y: hidden;
     transition: 0.5s;
+    @media screen and (max-width: 480px) {
+      .overlay{
+      height:40%;
+      width:80%;
+      background-color:white;
+    }
+  }
   }
   
   .overlay-content {

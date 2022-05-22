@@ -1,14 +1,30 @@
+import { experimental_extendTheme } from "@mui/material";
 import React, { useContext } from "react";
+import './ContextCart.css'
 import { CartContext } from "./Cart";
 
 const Items = ({ id, description, title, img, price, quantity }) => {
-  const { removeItem, increment, decrement } = useContext(CartContext);
+const { removeItem, increment, decrement } = useContext(CartContext);
+const expandImg = (img) => {
+  document.getElementById("expandImage").style.height = "100%";
+}
 
+const closeNav = () => {
+document.getElementById("expandImage").style.height = "0%";
+}
   return (
     <>
       <div className="items-info">
+      
         <div className="product-img">
-          <img src={img} alt="iamge" />
+          <img src={img} alt="iamge"
+            onClick={()=>expandImg(img)}
+          />
+        </div>
+
+        <div id="expandImage" className="overlay">
+          <a className="closebtn" onClick={closeNav}>&times;</a>
+          <img className="overlay-content" src={img} alt="Mobile" style={{top:"7%",width:"70%", height:"60%", marginLeft:"auto", marginRight:"auto", display:"block"}}/>
         </div>
 
         <div className="title">

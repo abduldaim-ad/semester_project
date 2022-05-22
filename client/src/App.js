@@ -6,13 +6,14 @@ import './App.css'
 
 export default function App() {
   const [user, setLoginUser] = useState({})
+  
   return (
     user && user._id
     ?
     <div>
       {console.log(user)}
 
-      <nav className="navbar navbar-expand-lg navbar-dark shadow p-3 rounded" style={{backgroundColor:"#09062b", position:"sticky", top:0, overflow:"hidden", zIndex:"50"}}>
+      <nav id="navUnique" className="navbar navbar-expand-lg navbar-dark shadow p-3 rounded" style={{backgroundColor:"#09062b", position:"sticky", top:0, overflow:"hidden", zIndex:"50"}}>
       {/* #c5aa6a */}
         
 
@@ -28,7 +29,7 @@ export default function App() {
         </li>
       <li className="nav-item active">
         <a className="nav-link" href="#">
-          <Link to="/cart" style={{color:"white", textDecoration:"none"}} className="linksCSS">Cart</Link>
+          <Link to="/cart" style={{color:"white", textDecoration:"none",marginLeft:"20%"}} className="linksCSS">Cart</Link>
         </a>
       </li>
       <li className="nav-item">
@@ -54,11 +55,14 @@ export default function App() {
         <Link to="/" style={{color:"white", textDecoration:"none"}} onClick={e=>setLoginUser({})} className="linksCSS">Sign Out</Link>
         </a>
       </li>
+      <li>
+        <input type="text" placeholder="Enter to Search..." style={{width:"70%", marginLeft:"280%"}}/>
+      </li>
       </>
       :
       <li className="nav-item">
         <a className="nav-link" href="#">
-        <Link to="/" style={{color:"white", textDecoration:"none"}} className="linksCSS">Sign In/Sign Up</Link>
+        <Link to="/" style={{color:"white", textDecoration:"none", marginLeft:"20%"}} className="linksCSS">Sign In/Sign Up</Link>
         </a>
       </li>
     }
@@ -114,10 +118,8 @@ export default function App() {
     </ul>
       </nav>
       <Outlet />
-    </div>    
+    </div>
     <Auth setLoginUser={setLoginUser}/>
     </>
   );
 }
-
-
